@@ -1,0 +1,31 @@
+{
+    "name": "ecx-sp",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite --port=3000",
+        "build": "tsc -b && vite build --base=/sidepanel",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@tanstack/react-query": "^5.66.11",
+        "bootstrap": "^5.3.3",
+        "lucide-react": "^0.477.0",
+        "react": "^19.0.0",
+        "react-bootstrap": "^2.10.9",
+        "react-dom": "^19.0.0",
+        "react-router-dom": "^7.2.0"
+    },
+    "devDependencies": {
+        "@tanstack/react-query-devtools": "^5.66.11",
+        "@types/chrome": "^0.0.307",
+        "@types/node": "^22.13.8",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "@vitejs/plugin-react": "^4.3.4",
+        "globals": "^16.0.0",
+        "sass": "^1.85.1",
+        "typescript": "~5.8.2",
+        "vite": "^6.2.0"
+    }
+}

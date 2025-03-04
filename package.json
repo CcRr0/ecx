@@ -1,0 +1,33 @@
+{
+    "name": "ecx",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev:ts": "tsx dev-ts",
+        "dev:sass": "sass --watch src:live",
+        "dev:static": "tsx dev-static",
+        "dev:sp": "npm run --prefix sidepanel dev",
+        "dev": "conc 'npm run dev:ts' 'npm run dev:sass' 'npm run dev:static' 'npm run dev:sp' 'tsx proxy'",
+        "build:ts": "tsx build-ts",
+        "build:sass": "sass --style=compressed --no-source-map src:dist",
+        "build:static": "tsx build-static",
+        "build:sp": "npm run --prefix sidepanel build && cp -r ./sidepanel/dist/ ./dist/sidepanel/",
+        "build": "rm -rf ./dist/* && npm run build:ts && npm run build:sass && npm run build:static && npm run build:sp",
+        "clean": "rm -f ./export/${npm_package_name}-${npm_package_version}.zip",
+        "compress": "cd dist && rm -f .DS_Store && zip -0rX ../export/${npm_package_name}-${npm_package_version}.zip .",
+        "export": "npm run build && npm run clean && npm run compress"
+    },
+    "devDependencies": {
+        "@types/chrome": "^0.0.307",
+        "@types/node": "^22.13.8",
+        "@types/ws": "^8.5.14",
+        "concurrently": "^9.1.2",
+        "esbuild": "^0.25.0",
+        "glob": "^11.0.1",
+        "sass": "^1.85.1",
+        "tsx": "^4.19.3",
+        "typescript": "^5.8.2",
+        "ws": "^8.18.1"
+    }
+}

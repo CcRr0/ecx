@@ -1,0 +1,32 @@
+.ecx-progress {
+    position: relative;
+    width: 300px;
+    height: 15.5px;
+}
+
+.ecx-progress-text {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 12.5px;
+    font-weight: bold;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ecx-progress-bar {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.ecx-progress-bar::-webkit-progress-bar {
+    border-radius: 7px;
+    background: #a1a1a1;
+}
+
+.ecx-progress-bar::-webkit-progress-value {
+    border-radius: 7px;
+    background: linear-gradient(to right, #4364fd, #825bf3);
+}

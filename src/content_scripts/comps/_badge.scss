@@ -1,0 +1,40 @@
+.ecx-badge {
+    display: inline-block;
+    margin: 0.25em;
+    padding: 0.25em 0.55em;
+    border-radius: 0.55rem;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    vertical-align: baseline;
+}
+
+.ecx-badge-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.ecx-badge-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.ecx-badge-success {
+    background-color: #04cf4a;
+    color: white;
+}
+
+.ecx-badge-danger {
+    background-color: #ff0000;
+    color: white;
+}
+
+.ecx-badge-warning {
+    background-color: #ff9900;
+}
+
+.ecx-badge-info {
+    background-color: #17a2b8;
+    color: white;
+}

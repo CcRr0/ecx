@@ -1,0 +1,55 @@
+{
+    "$schema": "https://json.schemastore.org/chrome-manifest",
+    "manifest_version": 3,
+    "name": "hsu-ecx",
+    "description": "한성대학교 e클래스 확장 프로그램",
+    "version": "0.1.0",
+    "icons": {
+        "16": "/assets/icon-16.png",
+        "48": "/assets/icon-48.png",
+        "128": "/assets/icon-128.png",
+        "256": "/assets/icon-256.png"
+    },
+    "permissions": [
+        "tabs",
+        "sidePanel"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "/assets/icon-16.png",
+            "24": "/assets/icon-24.png",
+            "32": "/assets/icon-32.png"
+        }
+    },
+    "background": {
+        "service_worker": "/service_worker/index.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://learn.hansung.ac.kr/*"
+            ],
+            "exclude_matches": [
+                "https://learn.hansung.ac.kr/mod/vod/viewer.php?*",
+                "https://learn.hansung.ac.kr/mod/laby/viewer.php?*"
+            ],
+            "js": [
+                "/content_scripts/index.js"
+            ],
+            "css": [
+                "/content_scripts/index.css"
+            ]
+        },
+        {
+            "matches": [
+                "https://learn.hansung.ac.kr/course/view.php?*"
+            ],
+            "js": [
+                "/content_scripts/progress/index.js"
+            ],
+            "css": [
+                "/content_scripts/progress/index.css"
+            ]
+        }
+    ]
+}
