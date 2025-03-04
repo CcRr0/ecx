@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "paths": {
+            "#/*": [
+                "./src/*"
+            ],
+            "#cs/*": [
+                "./src/content_scripts/*"
+            ],
+            "#sw/*": [
+                "./src/service_worker/*"
+            ],
+            "@/*": [
+                "./sidepanel/src/*"
+            ]
+        },
+        "types": [
+            "@types/chrome",
+            "@types/node"
+        ]
+    },
+    "include": [
+        "src/**/*",
+        "*.ts"
+    ]
+}

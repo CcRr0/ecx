@@ -1,0 +1,7 @@
+.accordion-body {
+    font-size: 15.5px;
+
+    > *:last-child {
+        margin-bottom: 0.25rem !important;
+    }
+}
