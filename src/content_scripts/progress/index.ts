@@ -2,7 +2,7 @@
 
 import { onLoad } from "#/utils/load";
 import { fetchVideoInfo } from "#cs/fetch/video";
-import { VideoSelector, AssignSelector, QuizSelector } from "#cs/fetch/course";
+import { SwitchSelector, VideoSelector, AssignSelector, QuizSelector } from "#cs/fetch/course";
 
 import videoExt from "./video";
 import assignExt from "./assign";
@@ -11,6 +11,10 @@ import quizExt from "./quiz";
 const Exclude = ":not(.course_box0 .activity)";
 
 onLoad(async () => {
+    if (document.querySelector(SwitchSelector)) {
+        return;
+    }
+
     const params = new URLSearchParams(location.search);
     const id = Number(params.get("id"));
 

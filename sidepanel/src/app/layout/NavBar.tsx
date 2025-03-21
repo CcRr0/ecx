@@ -10,6 +10,7 @@ function NavBar() {
                 </Nav>
                 <Nav>
                     <Nav.Link as={Link} to="/settings">설정</Nav.Link>
+                    <Nav.Link as={Link} to="/updates">업데이트</Nav.Link>
                     <Nav.Link href="https://github.com/CcRr0/ecx" target="_blank">GitHub</Nav.Link>
                 </Nav>
             </Container>

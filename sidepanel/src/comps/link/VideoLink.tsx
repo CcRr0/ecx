@@ -1,7 +1,6 @@
 import React, { MouseEventHandler } from "react";
 
-const Vod = "width=640,height=368,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes";
-const Laby = "width=900,height=600,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes";
+const Feats = "toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes";
 
 export interface VideoLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     video: number | null;
@@ -28,7 +27,7 @@ function VideoLink({ video, laby, ...props }: VideoLinkProps) {
 
     const handleClick: MouseEventHandler = (e) => {
         e.preventDefault();
-        window.open(url, "", laby ? Laby : Vod);
+        window.open(url, "", Feats);
     };
 
     return (
