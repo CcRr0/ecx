@@ -29,6 +29,7 @@ export interface CourseCurrent {
     quiz: CourseQuiz[];
 }
 
+export const SwitchSelector = "a.btn-switch";
 export const VideoSelector = "li.activity:is(.vod, .laby):has(.text-ubstrap)";
 export const AssignSelector = "li.activity.assign:has(a)";
 export const QuizSelector = "li.activity.quiz:has(a)";
@@ -63,11 +64,15 @@ export async function fetchCourseCurrent(id: number): Promise<CourseCurrent> {
     const url = `/course/view.php?id=${id}`;
     const doc = await fetchParse(url);
 
-    const current = doc.querySelector("div.course_box_current");
-
     const res: CourseCurrent = {
         video: [], assign: [], quiz: [],
     };
+
+    if (document.querySelector(SwitchSelector)) {
+        return res;
+    }
+
+    const current = doc.querySelector("div.course_box_current");
     if (!current) {
         return res;
     }

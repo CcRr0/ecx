@@ -1,7 +1,7 @@
 {
     "name": "ecx",
     "private": true,
-    "version": "0.1.0",
+    "version": "0.2.0",
     "type": "module",
     "scripts": {
         "dev:ts": "tsx dev-ts",
@@ -19,13 +19,13 @@
         "export": "npm run build && npm run clean && npm run compress"
     },
     "devDependencies": {
-        "@types/chrome": "^0.0.307",
-        "@types/node": "^22.13.8",
-        "@types/ws": "^8.5.14",
+        "@types/chrome": "^0.0.310",
+        "@types/node": "^22.13.10",
+        "@types/ws": "^8.18.0",
         "concurrently": "^9.1.2",
-        "esbuild": "^0.25.0",
+        "esbuild": "^0.25.1",
         "glob": "^11.0.1",
-        "sass": "^1.85.1",
+        "sass": "^1.86.0",
         "tsx": "^4.19.3",
         "typescript": "^5.8.2",
         "ws": "^8.18.1"
