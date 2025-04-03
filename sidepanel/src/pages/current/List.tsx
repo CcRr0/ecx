@@ -1,5 +1,6 @@
 import { useCourseCurrent, useCourseList } from "$/course";
 import { useCourseSummary } from "$/summary";
+import { useVideoList } from "$/video";
 
 import { CourseInfo } from "#cs/fetch/course";
 import { summarize } from "@/utils/summary";
@@ -27,6 +28,11 @@ function List() {
 function Detail({ id, title }: CourseInfo) {
     const { data: current } = useCourseCurrent(id);
     const { data: summary } = useCourseSummary(id);
+    const { data: videoList } = useVideoList(id);
+
+    const week = current && current.week;
+    const videoInfos = videoList && week && videoList[week];
+
     const [now, max] = summary ? summarize(summary) : [null, null];
 
     return (
@@ -43,8 +49,8 @@ function Detail({ id, title }: CourseInfo) {
             </Accordion.Header>
             {current && max !== 0 && (
                 <Accordion.Body>
-                    {current.video.map(video => (
-                        <Video key={video.id} className="mb-2" video={video} course={id} />
+                    {videoInfos && current.video.map((video, i) => (
+                        <Video key={video.id} className="mb-2" video={video} info={videoInfos[i]} />
                     ))}
                     {current.video.length > 0 && current.assign.length > 0 && (
                         <div className="mb-1" />

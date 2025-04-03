@@ -1,6 +1,7 @@
 .idea/
-.DS_Store/
+.DS_Store
 node_modules/
+tsconfig.tsbuildinfo
 live/
 dist/
 export/

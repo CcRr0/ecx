@@ -1,6 +1,6 @@
 type Req =
     CourseListReq | CourseCurrentReq |
-    VideoInfoReq | AssignInfoReq | QuizInfoReq;
+    VideoListReq | AssignInfoReq | QuizInfoReq;
 
 export default Req;
 export type Type = Req["type"];
@@ -14,8 +14,8 @@ interface CourseCurrentReq {
     id: number;
 }
 
-interface VideoInfoReq {
-    type: "VIDEO_INFO";
+interface VideoListReq {
+    type: "VIDEO_LIST";
     id: number;
 }
 

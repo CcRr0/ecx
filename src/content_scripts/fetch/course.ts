@@ -24,6 +24,7 @@ export interface CourseQuiz {
 }
 
 export interface CourseCurrent {
+    week: number;
     video: CourseVideo[];
     assign: CourseAssign[];
     quiz: CourseQuiz[];
@@ -65,6 +66,7 @@ export async function fetchCourseCurrent(id: number): Promise<CourseCurrent> {
     const doc = await fetchParse(url);
 
     const res: CourseCurrent = {
+        week: 0,
         video: [], assign: [], quiz: [],
     };
 
@@ -76,6 +78,9 @@ export async function fetchCourseCurrent(id: number): Promise<CourseCurrent> {
     if (!current) {
         return res;
     }
+
+    const section = current.querySelector("ul.weeks > li.section")!;
+    res.week = Number(section.id.split("-")[1]);
 
     const videos = current.querySelectorAll(VideoSelector);
     const assigns = current.querySelectorAll(AssignSelector);

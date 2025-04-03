@@ -10,14 +10,11 @@ import Badge from "#cs/comps/badge";
 
 type Status = "Att" | "Abs" | "Pend" | "Disabled";
 
-export default function videoExt(video: Element, info: VideoInfo) {
-    const title = video.querySelector("span.instancename")!.firstChild!.textContent!.trim();
-    const prog = info[title];
-    if (prog === undefined) {
+export default function videoExt(video: Element, { title, actual, required }: VideoInfo) {
+    const name = video.querySelector("span.instancename")!.firstChild!.textContent!.trim();
+    if (name !== title) {
         return;
     }
-
-    const { actual, required } = prog;
 
     const [from, due] = video.querySelector("span.text-ubstrap")!.textContent!.split("~").map(s => new Date(s));
     const [rem, left] = remaining(due);

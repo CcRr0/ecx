@@ -8,25 +8,25 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@tanstack/react-query": "^5.69.0",
+        "@tanstack/react-query": "^5.71.5",
         "bootstrap": "^5.3.3",
-        "lucide-react": "^0.483.0",
-        "react": "^19.0.0",
+        "lucide-react": "^0.487.0",
+        "react": "^19.1.0",
         "react-bootstrap": "^2.10.9",
-        "react-dom": "^19.0.0",
+        "react-dom": "^19.1.0",
         "react-markdown": "^10.1.0",
-        "react-router-dom": "^7.4.0"
+        "react-router-dom": "^7.4.1"
     },
     "devDependencies": {
-        "@tanstack/react-query-devtools": "^5.69.0",
-        "@types/chrome": "^0.0.310",
-        "@types/node": "^22.13.10",
-        "@types/react": "^19.0.12",
-        "@types/react-dom": "^19.0.4",
+        "@tanstack/react-query-devtools": "^5.71.5",
+        "@types/chrome": "^0.0.313",
+        "@types/node": "^22.14.0",
+        "@types/react": "^19.1.0",
+        "@types/react-dom": "^19.1.1",
         "@vitejs/plugin-react": "^4.3.4",
         "globals": "^16.0.0",
-        "sass": "^1.86.0",
+        "sass": "^1.86.2",
         "typescript": "~5.8.2",
-        "vite": "^6.2.2"
+        "vite": "^6.2.5"
     }
 }

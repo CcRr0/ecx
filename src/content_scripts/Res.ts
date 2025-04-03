@@ -8,7 +8,7 @@ import { QuizInfo } from "./fetch/quiz";
 type Res<T extends Type> = {
     "COURSE_LIST": CourseInfo[];
     "COURSE_CURRENT": CourseCurrent;
-    "VIDEO_INFO": VideoInfo;
+    "VIDEO_LIST": VideoInfo[][];
     "ASSIGN_INFO": AssignInfo;
     "QUIZ_INFO": QuizInfo;
 }[T];

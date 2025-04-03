@@ -4,7 +4,7 @@ import Req, { Type } from "./Req";
 import Res from "./Res";
 
 import { fetchCourseList, fetchCourseCurrent } from "./fetch/course";
-import { fetchVideoInfo } from "./fetch/video";
+import { fetchVideoList } from "./fetch/video";
 import { fetchAssignInfo } from "./fetch/assign";
 import { fetchQuizInfo } from "./fetch/quiz";
 
@@ -28,10 +28,10 @@ chrome.runtime.onMessage.addListener((req: Req, _sender, sendResponse) => {
             const res = await fetchCourseCurrent(id);
             respond<typeof type>(res);
         })();
-    } else if (type === "VIDEO_INFO") {
+    } else if (type === "VIDEO_LIST") {
         const { id } = req;
         (async () => {
-            const res = await fetchVideoInfo(id);
+            const res = await fetchVideoList(id);
             respond<typeof type>(res);
         })();
     } else if (type === "ASSIGN_INFO") {
