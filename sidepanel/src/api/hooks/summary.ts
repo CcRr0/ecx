@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import queryClient from "../queryClient";
 
 import { courseListOptions, courseCurrentOptions } from "./course";
-import { videoInfoOptions } from "./video";
+import { videoListOptions } from "./video";
 import { assignInfoOptions } from "./assign";
 import { quizInfoOptions } from "./quiz";
 
@@ -33,7 +33,7 @@ export function useCourseSummaries() {
 }
 
 async function fetchCourseSummary(id: number): Promise<CourseSummary> {
-    const { video, assign, quiz } = await queryClient.fetchQuery(courseCurrentOptions(id));
+    const { week, video, assign, quiz } = await queryClient.fetchQuery(courseCurrentOptions(id));
 
     let videoAct = 0;
     let videoReq = 0;
@@ -45,9 +45,9 @@ async function fetchCourseSummary(id: number): Promise<CourseSummary> {
 
     videoTotal += video.length;
     if (video.length > 0) {
-        const videoInfo = await queryClient.fetchQuery(videoInfoOptions(id));
-        for (const { title } of video) {
-            const { actual, required } = videoInfo[title];
+        const videoList = await queryClient.fetchQuery(videoListOptions(id));
+        const videoInfos = videoList[week];
+        for (const { actual, required } of videoInfos) {
             videoAct += Math.min(actual, required);
             videoReq += required;
         }

@@ -1,15 +1,15 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { sendTab } from "../chrome";
 
-export const videoInfoOptions = (id: number) => ({
+export const videoListOptions = (id: number) => ({
     queryKey: ["video", id],
     queryFn: () => sendTab({
-        type: "VIDEO_INFO",
+        type: "VIDEO_LIST",
         id,
     }),
     staleTime: 30 * 1000,
 } satisfies UseQueryOptions);
 
-export function useVideoInfo(id: number) {
-    return useQuery(videoInfoOptions(id));
+export function useVideoList(id: number) {
+    return useQuery(videoListOptions(id));
 }

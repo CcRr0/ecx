@@ -1,7 +1,7 @@
 import React from "react";
-import { useVideoInfo } from "$/video";
 
 import { CourseVideo } from "#cs/fetch/course";
+import { VideoInfo } from "#cs/fetch/video";
 import { formatSec } from "@/utils/format";
 
 import { Badge, ProgressBar } from "react-bootstrap";
@@ -12,12 +12,14 @@ import { VideoLink } from "@/comps/link";
 
 export interface VideoProps extends React.HTMLAttributes<HTMLDivElement> {
     video: CourseVideo;
-    course: number;
+    info: VideoInfo;
 }
 
-function Video({ video: { title, id, laby, from: fromIso, due: dueIso }, course, ...props }: VideoProps) {
-    const { data: info } = useVideoInfo(course);
-    const { actual, required } = info ? info[title] : { actual: null, required: null };
+function Video({ video: { title, id, laby, from: fromIso, due: dueIso }, info, ...props }: VideoProps) {
+    if (title !== info.title) {
+        return null;
+    }
+    const { actual, required } = info;
 
     const from = new Date(fromIso);
     const due = new Date(dueIso);

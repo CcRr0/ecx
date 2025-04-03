@@ -3,7 +3,7 @@ import { MemoryRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Current from "@/pages/current";
 import Settings from "@/pages/settings";
-import Updates from "../pages/updates";
+import Updates from "@/pages/updates";
 
 function Router() {
     return (
